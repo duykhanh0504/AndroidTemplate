@@ -1,0 +1,76 @@
+ext {
+    //App Id
+    appId = "com.moneyforward.android.qrcodegenerator"
+    testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+    //App version
+    appCompileSdkVersion = 28
+    appMinSdkVersion = 15
+    appTargetSdkVersion = 28
+    appMajorVersion = 1
+    appMinorVersion = 0
+    appHotfixVersion = 0
+    appVersionCode = 1
+    appVersionName = "${appMajorVersion}.${appMinorVersion}.${appHotfixVersion}"
+
+    //Version library
+    supportLibrary = '28.0.0'
+    constraintLibrary = '1.1.3'
+    junitLibrary = '4.12'
+    runnerLibrary = '1.0.2'
+    espressoCoreLibrary = '3.0.2'
+    kotlinCoroutinesLibrary = '1.1.1'
+    javaxInjectLibrary = '1'
+    architectureLibrary = "1.1.1"
+    daggerLibrary = '2.11'
+    glideLibrary = '4.7.1'
+    glideTransformationsLibrary = '3.3.0'
+    //Development
+    leakCanaryLibrary = '1.5'
+
+    //Support Libraries dependencies
+    supportDependencies = [
+            design              : "com.android.support:design:${supportLibrary}",
+            recyclerView        : "com.android.support:recyclerview-v7:${supportLibrary}",
+            cardView            : "com.android.support:cardview-v7:${supportLibrary}",
+            appCompat           : "com.android.support:appcompat-v7:${supportLibrary}",
+            constraintLibrary   : "com.android.support.constraint:constraint-layout:${constraintLibrary}",
+            supportAnnotation   : "com.android.support:support-annotations:${supportLibrary}",
+            customTabs          : "com.android.support:customtabs:${supportLibrary}",
+            exifInterface       : "com.android.support:exifinterface:${supportLibrary}",
+            vectorDrawable      : "com.android.support:support-vector-drawable:${supportLibrary}",
+            gridLayout          : "com.android.support:gridlayout-v7:${supportLibrary}",
+            supportCompat       : "com.android.support:support-compat:${supportLibrary}",
+            glide               : "com.github.bumptech.glide:glide:${glideLibrary}",
+            glideCompiler       : "com.github.bumptech.glide:compiler:${glideLibrary}",
+            glideTransformations: "jp.wasabeef:glide-transformations:${glideTransformationsLibrary}"
+    ]
+
+    //Test Libraries dependencies
+    testDependencies = [
+            junit       : "junit:junit:${junitLibrary}",
+            runner      : "com.android.support.test:runner:${runnerLibrary}",
+            espressoCore: "com.android.support.test.espresso:espresso-core:${espressoCoreLibrary}"
+    ]
+
+    //kotlin Libraries dependencies
+    kotlinDependencies = [
+            kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            kotlinCoroutines       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesLibrary",
+            kotlinCoroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesLibrary"
+    ]
+    //architecture Libraries dependencies
+    architectureDependencies = [
+            extensions    : "android.arch.lifecycle:extensions:${architectureLibrary}",
+            viewmodel     : "android.arch.lifecycle:viewmodel:${architectureLibrary}",
+            livedata      : "android.arch.lifecycle:livedata:${architectureLibrary}",
+            dagger        : "com.google.dagger:dagger:${daggerLibrary}",
+            daggerCompiler: "com.google.dagger:dagger-compiler:${daggerLibrary}",
+            javaxInject   : "javax.inject:javax.inject:${javaxInjectLibrary}"
+    ]
+    //development Libraries dependencies
+    developmentDependencies = [
+            leakCanary    : "com.squareup.leakcanary:leakcanary-android:${leakCanaryLibrary}",
+            leakCanaryNoop: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryLibrary}"
+    ]
+}

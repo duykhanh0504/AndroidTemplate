@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.moneyforward.android.mfexpo"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':common')
+    implementation kotlinDependencies.kotlin
+    //Support Library
+    implementation supportDependencies.constraintLibrary
+    implementation supportDependencies.cardView
+    implementation supportDependencies.recyclerView
+    implementation supportDependencies.design
+    implementation supportDependencies.customTabs
+    implementation supportDependencies.supportCompat
+    //glide Library
+    implementation supportDependencies.glide
+    implementation supportDependencies.glideTransformations
+    kapt supportDependencies.glideCompiler
+    //architecture Library
+    implementation architectureDependencies.viewmodel
+    implementation architectureDependencies.extensions
+    implementation architectureDependencies.dagger
+    //Compile time dependencies
+    kapt architectureDependencies.daggerCompiler
+    //Development dependencies
+    debugImplementation developmentDependencies.leakCanary
+}
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
