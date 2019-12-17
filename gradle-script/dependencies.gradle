@@ -1,11 +1,11 @@
 ext {
     //App Id
-    appId = "com.moneyforward.android.qrcodegenerator"
+    appId = "com.tornadoentertainment.bookreader"
     testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
 
     //App version
     appCompileSdkVersion = 28
-    appMinSdkVersion = 15
+    appMinSdkVersion = 19
     appTargetSdkVersion = 28
     appMajorVersion = 1
     appMinorVersion = 0
@@ -14,43 +14,78 @@ ext {
     appVersionName = "${appMajorVersion}.${appMinorVersion}.${appHotfixVersion}"
 
     //Version library
-    supportLibrary = '28.0.0'
+    supportLibrary = '1.0.0'
     constraintLibrary = '1.1.3'
+    appcompatLibrary = '1.1.0'
+    annotationLibrary = '1.1.0'
+    vectordrawableLibrary = '1.1.0'
+    coreLibrary = '1.1.0'
     junitLibrary = '4.12'
-    runnerLibrary = '1.0.2'
-    espressoCoreLibrary = '3.0.2'
-    kotlinCoroutinesLibrary = '1.1.1'
-    javaxInjectLibrary = '1'
-    architectureLibrary = "1.1.1"
-    daggerLibrary = '2.11'
-    glideLibrary = '4.7.1'
-    glideTransformationsLibrary = '3.3.0'
+    runnerLibrary = '1.2.0'
+    espressoCoreLibrary = '3.2.0'
+    multidexLibrary = '1.0.1'
+    shimmerLibrary = '0.1.0'
+    mpchart = '3.1.0'
+    lottieLibrary = '3.2.2'
+
     //Development
     leakCanaryLibrary = '1.5'
 
+    //Firebase
+    firebaseMessagingLibrary = '20.0.0'
+    firebaseCoreLibrary = '17.2.1'
+    firebaseDatabaseLibrary = '21.2.1'
+
+    kotlinCoroutinesLibrary = '1.1.1'
+    javaxInjectLibrary = '1'
+    eventbus = '3.1.1'
+    gsonLibrary = "2.8.2"
+    architectureLibrary = "2.1.0"
+    daggerLibrary = '2.11'
+    glideLibrary = '4.10.0'
+    glideTransformationsLibrary = '4.0.0'
+    retrofitLibrary = "2.3.0"
+    okhttpLibrary = "3.8.0"
+
     //Support Libraries dependencies
     supportDependencies = [
-            design              : "com.android.support:design:${supportLibrary}",
-            recyclerView        : "com.android.support:recyclerview-v7:${supportLibrary}",
-            cardView            : "com.android.support:cardview-v7:${supportLibrary}",
-            appCompat           : "com.android.support:appcompat-v7:${supportLibrary}",
-            constraintLibrary   : "com.android.support.constraint:constraint-layout:${constraintLibrary}",
-            supportAnnotation   : "com.android.support:support-annotations:${supportLibrary}",
-            customTabs          : "com.android.support:customtabs:${supportLibrary}",
-            exifInterface       : "com.android.support:exifinterface:${supportLibrary}",
-            vectorDrawable      : "com.android.support:support-vector-drawable:${supportLibrary}",
-            gridLayout          : "com.android.support:gridlayout-v7:${supportLibrary}",
-            supportCompat       : "com.android.support:support-compat:${supportLibrary}",
-            glide               : "com.github.bumptech.glide:glide:${glideLibrary}",
-            glideCompiler       : "com.github.bumptech.glide:compiler:${glideLibrary}",
-            glideTransformations: "jp.wasabeef:glide-transformations:${glideTransformationsLibrary}"
+            design           : "com.android.support:design:${supportLibrary}",
+            material         : "com.google.android.material:material:${supportLibrary}",
+            recyclerView     : "androidx.recyclerview:recyclerview:${supportLibrary}",
+            cardView         : "androidx.cardview:cardview:${supportLibrary}",
+            appCompat        : "androidx.appcompat:appcompat:${appcompatLibrary}",
+            constraintLibrary: "androidx.constraintlayout:constraintlayout:${constraintLibrary}",
+            annotation       : "androidx.annotation:annotation:${annotationLibrary}",
+            browser          : "androidx.browser:browser:${supportLibrary}",
+            exifInterface    : "androidx.exifinterface:exifinterface:${supportLibrary}",
+            vectorDrawable   : "androidx.vectordrawable:vectordrawable:${vectordrawableLibrary}",
+            gridLayout       : "androidx.gridlayout:gridlayout:${supportLibrary}",
+            core             : "androidx.core:core:${coreLibrary}",
+            multidex         : "com.android.support:multidex:${multidexLibrary}",
+            shimmer          : "com.facebook.shimmer:shimmer:${shimmerLibrary}@aar",
+            MPchart          : "com.github.PhilJay:MPAndroidChart:${mpchart}",
+            lottie           : "com.airbnb.android:lottie:$lottieLibrary"
     ]
 
-    //Test Libraries dependencies
-    testDependencies = [
-            junit       : "junit:junit:${junitLibrary}",
-            runner      : "com.android.support.test:runner:${runnerLibrary}",
-            espressoCore: "com.android.support.test.espresso:espresso-core:${espressoCoreLibrary}"
+
+    //Api Libraries dependencies
+    firebaseDependencies = [
+            firebaseCore     : "com.google.firebase:firebase-core:${firebaseCoreLibrary}",
+            firebaseDatabase : "com.google.firebase:firebase-firestore:${firebaseDatabaseLibrary}",
+            firebaseMessaging: "com.google.firebase:firebase-messaging:${firebaseMessagingLibrary}"
+    ]
+
+
+    //architecture Libraries dependencies
+    architectureDependencies = [
+            extensions    : "androidx.lifecycle:lifecycle-extensions:${architectureLibrary}",
+            viewmodel     : "androidx.lifecycle:lifecycle-viewmodel:${architectureLibrary}",
+            livedata      : "androidx.lifecycle:lifecycle-livedata:${architectureLibrary}",
+            compiler      : "androidx.lifecycle:lifecycle-compiler:${architectureLibrary}",
+            dagger        : "com.google.dagger:dagger:${daggerLibrary}",
+            daggerCompiler: "com.google.dagger:dagger-compiler:${daggerLibrary}",
+            javaxInject   : "javax.inject:javax.inject:${javaxInjectLibrary}",
+            eventBus      : "org.greenrobot:eventbus:${eventbus}"
     ]
 
     //kotlin Libraries dependencies
@@ -59,15 +94,34 @@ ext {
             kotlinCoroutines       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesLibrary",
             kotlinCoroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesLibrary"
     ]
-    //architecture Libraries dependencies
-    architectureDependencies = [
-            extensions    : "android.arch.lifecycle:extensions:${architectureLibrary}",
-            viewmodel     : "android.arch.lifecycle:viewmodel:${architectureLibrary}",
-            livedata      : "android.arch.lifecycle:livedata:${architectureLibrary}",
-            dagger        : "com.google.dagger:dagger:${daggerLibrary}",
-            daggerCompiler: "com.google.dagger:dagger-compiler:${daggerLibrary}",
-            javaxInject   : "javax.inject:javax.inject:${javaxInjectLibrary}"
+
+    //glide Libraries dependencies
+    glideDependencies = [
+            glide               : "com.github.bumptech.glide:glide:${glideLibrary}",
+            glideCompiler       : "com.github.bumptech.glide:compiler:${glideLibrary}",
+            glideTransformations: "jp.wasabeef:glide-transformations:${glideTransformationsLibrary}"
     ]
+
+    //Test Unit Libraries dependencies
+    unitTestDependencies = [
+            junit: "junit:junit:${junitLibrary}",
+    ]
+
+    //Test Android Libraries dependencies
+    acceptanceTestDependencies = [
+            runner      : "androidx.test:runner:${runnerLibrary}",
+            espressoCore: "androidx.test.espresso:espresso-core:${espressoCoreLibrary}",
+    ]
+
+    //Api Libraries dependencies
+    apiDependencies = [
+            retrofit          : "com.squareup.retrofit2:retrofit:${retrofitLibrary}",
+            converterGson     : "com.squareup.retrofit2:converter-gson:${retrofitLibrary}",
+            adapterRxJava2    : "com.squareup.retrofit2:adapter-rxjava2:${retrofitLibrary}",
+            loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okhttpLibrary}",
+            gson              : "com.google.code.gson:gson:${gsonLibrary}"
+    ]
+
     //development Libraries dependencies
     developmentDependencies = [
             leakCanary    : "com.squareup.leakcanary:leakcanary-android:${leakCanaryLibrary}",

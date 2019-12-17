@@ -1,23 +1,25 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-android-extensions'
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion 21
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -25,28 +27,36 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     //Support Library
     implementation supportDependencies.appCompat
 
-    // Test Libraries
-    testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.runner
-    androidTestImplementation testDependencies.espressoCore
+    androidTestImplementation acceptanceTestDependencies.runner
+    androidTestImplementation acceptanceTestDependencies.espressoCore
+
+    //Firebase dependencies
+    api firebaseDependencies.firebaseCore
+    api firebaseDependencies.firebaseDatabase
+    api firebaseDependencies.firebaseMessaging
+
+    implementation architectureDependencies.extensions
+    implementation architectureDependencies.dagger
+
+    //Compile time dependencies
+    api architectureDependencies.javaxInject
 
     // Kotlin Libraries
     api kotlinDependencies.kotlin
     api kotlinDependencies.kotlinCoroutines
     api kotlinDependencies.kotlinCoroutinesAndroid
 
-    //Compile time dependencies
-    api architectureDependencies.javaxInject
-}
-repositories {
-    mavenCentral()
-}
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
+    // Service Libraries
+    implementation apiDependencies.gson
+    implementation apiDependencies.converterGson
+    implementation apiDependencies.loggingInterceptor
+
+    implementation apiDependencies.gson
+    // Service Libraries
+    api apiDependencies.retrofit
+    implementation apiDependencies.converterGson
+    implementation apiDependencies.loggingInterceptor
 }

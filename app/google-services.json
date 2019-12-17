@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "602584679521",
+    "firebase_url": "https://readbook-82d5a.firebaseio.com",
+    "project_id": "readbook-82d5a",
+    "storage_bucket": "readbook-82d5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602584679521:android:e864c973be358b56309620",
+        "android_client_info": {
+          "package_name": "com.tornadoentertainment.bookreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602584679521-9kqfhou18f0pl0idrljnquam8qj9790m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx8-3Hdeg6AxkkWsY1u-C5z2ep9can2J8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602584679521-9kqfhou18f0pl0idrljnquam8qj9790m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

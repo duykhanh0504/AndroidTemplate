@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- font sizes -->
+    <dimen name="font_largest">22sp</dimen>
+    <dimen name="font_larger">20sp</dimen>
+    <dimen name="font_large">17sp</dimen>
+    <dimen name="font_normal">12sp</dimen>
+    <dimen name="font_small">11sp</dimen>
+    <dimen name="font_tiny">9sp</dimen>
+    <dimen name="font_step_granularity">1sp</dimen>
+    <dimen name="font_custom_normal">23sp</dimen>
+    <dimen name="font_custom_small">15sp</dimen>
+
+    <!-- typical spacing between two views -->
+    <dimen name="spacing_huge">32dp</dimen>
+    <dimen name="spacing_larger">24dp</dimen>
+    <dimen name="spacing_large">20dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_once_dp">1dp</dimen>
+    <dimen name="spacing_one_half_dp">0.5dp</dimen>
+    <dimen name="spacing_two_dp">2dp</dimen>
+    <dimen name="spacing_once_px">1px</dimen>
+    <dimen name="spacing_zero_dp">0dp</dimen>
+    <dimen name="spacing_100">100dp</dimen>
+
+    <dimen name="reportImage">40dp</dimen>
+
+    <dimen name="tap_high">40dp</dimen>
+
+    <dimen name="width_onboarding_btn">190dp</dimen>
+
+    <dimen name="onboardingWidth">299dp</dimen>
+    <dimen name="onboardingHeight">306dp</dimen>
+
+</resources>
